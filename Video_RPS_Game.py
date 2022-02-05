@@ -65,12 +65,15 @@ while player_score < play_until and computer_score < play_until: # This means it
         #started == True
         #if started == True:
 
-    if started == False:
-        start_time = time.time()
+    # if started == False:
+    #     start_time = time.time()
+    #     started = True
+    # elasped = time.time() - start_time
+    if cv2.waitKey(1) & 0xFF == ord('a'):
         started = True
-    elasped = time.time() - start_time
-
-    if elasped > 5:
+    
+    # if elasped > 5:
+    if started == True:
         print(player_choice)
         if  player_choice == computer_choice:
             print(f"Both players selected {player_choice}. This round is a draw.")
