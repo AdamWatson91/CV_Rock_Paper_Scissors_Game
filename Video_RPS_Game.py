@@ -104,24 +104,29 @@ while player_score < play_until and computer_score < play_until: # This means it
         print("The current score is: You "+str(player_score)+" - "+str(computer_score)+" Computer")
         started = False
         computer_choice = ""
+        if player_score == play_until:
+            result = "Congratulations you win the game"
+        elif computer_score == play_until:
+            result = "Unfortunately you lost the game"
+
+        # if cv2.waitKey(1) & 0xFF == ord('y'):
+        #     player_score = 0
+        #     computer_score = 0
+
+
+
     if cv2.waitKey(1) & 0xFF == ord('q'): # This is the logic that enables cancelling the program when q is pressed on keyboard
         break # Gets out of the loop if above condition is met
-    #When game ends confirm outcome of the game`
-if player_score == play_until:
-    result = "Congratulations you win the game"
-else:
-    result = "Unfortunately you lost the game"
-print(result)           
+
 # After the loop release the cap object
 cap.release()
 #Destroy all the windows
 cv2.destroyAllWindows()
 
 #ENHANCEMENTS:
-#DISPLAY THE COMPUTER CHOICE AT POINT OF
+#DISPLAY THE COMPUTER CHOICE AT POINT OF PLAY
 #IMPROVE MODEL ACCURACY
-#TAKE A APPROCH THAT REVIEWS THE PROBABILITY OF THE PAST FEW PREDICTIONS TO SURE UP FURTHER HOWVER I THINK IMPROVING THE MEODEL IF BETTER
-#USER PUSHES WHEN THEY WANT TO PLAY EACH ROUND
+
 #PRINT THE RESULT OF EACH ROUND UNTIL THE NEW ROUND IS STARTED
 #PRINT THE FINAL RESULT ON THE SCREEN - START THE TIMER, STOP THE PREDICTION TEXT
 #USER CHOOSE TO EXIT THE GAME OR START AGAIN ONCE FINISHED RATHER THAN IT CLOSING SUDDENLY
